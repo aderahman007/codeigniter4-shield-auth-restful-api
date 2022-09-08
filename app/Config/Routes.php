@@ -38,6 +38,10 @@ $routes->set404Override();
 $routes->get('/', 'HomeController::index');
 $routes->get('tes', 'HomeController::getTes');
 
+
+$routes->group('api/v1', function($routes){
+    $routes->resource('suppliergroup', ['controller' => 'SupplierGroupController']);
+});
 /*
  * --------------------------------------------------------------------
  * Additional Routing
