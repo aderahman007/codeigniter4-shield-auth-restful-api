@@ -2,6 +2,8 @@
 
 namespace Config;
 
+use App\Controllers\SupplierController;
+
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
 
@@ -37,6 +39,7 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'HomeController::index');
 $routes->get('tes', 'HomeController::getTes');
+$routes->resource('supplier', ['controller' => 'SupplierController']);
 
 /*
  * --------------------------------------------------------------------

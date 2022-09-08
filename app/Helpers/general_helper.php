@@ -1,10 +1,20 @@
 <?php
 
-function sistem()
+/**
+ * Untuk mendapatkan semua nama kolom dalam tabel database
+ * @param string $table 
+ * 
+ * @return array
+ */
+function allfields($table)
 {
     $db      = db_connect();
-    $query = $db->table('manajemen_sistem')->get();
-    return $query->getFirstRow();
+    $query = $db->query("SHOW COLUMNS FROM " . $table . ";")->getResultArray();
+    $fields = [];
+    foreach ($query as $q) {
+        array_push($fields, $q['Field']);
+    }
+    return $fields;
 }
 
 function encrypt_url($p)
