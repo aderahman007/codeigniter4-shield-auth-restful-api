@@ -115,63 +115,20 @@ function get_kode($table, $primaryKey, $prefix, $prefix_date = false)
 
     if ($prefix_date == false) {
         if ($query <> 0) {
-            $urutan_kode = (int) substr($query['max_kode'], -6) + 1;
+            $urutan_kode = (int) substr($query['max_kode'], -11) + 1;
         } else {
             $urutan_kode = 1;
         }
 
-        $kode = $prefix . '-' . sprintf('%06s', $urutan_kode);
+        $kode = $prefix . '-' . sprintf('%011s', $urutan_kode);
     } else {
         if ($query <> 0) {
-            $urutan_kode = (int) substr($query['max_kode'], -6) + 1;
+            $urutan_kode = (int) substr($query['max_kode'], -11) + 1;
         } else {
             $urutan_kode = 1;
         }
 
-        $kode = $prefix . '-' . date('Y') . '-' . date('m') . '-' . sprintf('%06s', $urutan_kode);
+        $kode = $prefix . '-' . date('Y') . '-' . date('m') . '-' . sprintf('%011s', $urutan_kode);
     }
     return $kode;
-}
-
-// breadcrumbs
-// This function will take $_SERVER['REQUEST_URI'] and build a breadcrumb based on the user's current path
-function breadcrumbs($separator = '&nbsp &raquo; &nbsp', $home = 'Home')
-{
-    // This gets the REQUEST_URI (/path/to/file.php), splits the string (using '/') into an array, and then filters out any empty values
-    $path = array_filter(explode('/', parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)));
-
-    // This will build our "base URL" ... Also accounts for HTTPS :)
-    $base = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) : 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']);
-    $dash = site_url('admin');
-
-    // Initialize a temporary array with our breadcrumbs. (starting with our home page, which I'm assuming will be the base URL)
-    $breadcrumbs = array("<li><a href=\"$dash\">" . ucfirst($home) . "</a></li>");
-
-    // Initialize crumbs to track path for proper link
-    $crumbs = '';
-
-    // Find out the index for the last value in our path array
-    $last = end($path);
-
-    // Build the rest of the breadcrumbs
-    foreach ($path as $x => $crumb) {
-        // Our "title" is the text that will be displayed (strip out .php and turn '_' into a space)
-        if (strlen($crumb) > 15) {
-            continue;
-        }
-        $title = ucwords(str_replace(array('.php', '_', '%20'), array('', ' ', ' '), $crumb));
-
-        // If we are not on the last index, then display an <a> tag
-        if ($x != $last) {
-            $breadcrumbs[] = "<li>" . ucfirst($title) . "</li>";
-            $crumbs .= $crumb . '/';
-        }
-        // Otherwise, just display the title (minus)
-        else {
-            $breadcrumbs[] = $title;
-        }
-    }
-
-    // Build our temporary array (pieces of bread) into one big string :)
-    return implode($separator, $breadcrumbs);
 }
