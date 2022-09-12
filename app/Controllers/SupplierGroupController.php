@@ -13,7 +13,7 @@ class SupplierGroupController extends ResourceController
     public function __construct()
     {
         $this->validation = \Config\Services::validation();
-        helper(['general']);
+        helper(['general', 'form']);
     }
 
     /**
@@ -28,7 +28,7 @@ class SupplierGroupController extends ResourceController
         $msg = [
             'status'        => 200,
             'message'       => 'Semua data group suplier',
-            'data'          => $query,
+            'data'          => ['suppliergroup' => $query],
         ];
         return $this->respond($msg, 200);
     }
@@ -42,11 +42,11 @@ class SupplierGroupController extends ResourceController
     {
         $query = $this->model->find($id);
 
-        if (count($query) > 0) {
+        if ($query) {
             $msg = [
                 'status'        => 200,
-                'message'       => 'Semua data group suplier',
-                'data'          => $query,
+                'message'       => 'Data supplier group by id',
+                'data'          => ['suppliergroup' => $query],
             ];
         } else {
             $msg = [
@@ -82,18 +82,7 @@ class SupplierGroupController extends ResourceController
                     'required' => 'Deskripsi harus di isi'
                 ]
             ],
-            'parent' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Sub Form harus di isi'
-                ]
-            ],
-            'group' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Group harus di isi'
-                ]
-            ],
+            
         ]);
 
         if (!$validasi) {
@@ -102,13 +91,11 @@ class SupplierGroupController extends ResourceController
                 'message'       => 'Validation error',
                 'data' => [
                     'description' => $this->validation->getError('description'),
-                    'parent' => $this->validation->getError('parent'),
-                    'group' => $this->validation->getError('group'),
                 ]
             ];
         } else {
             $data = [
-                'id' => get_kode('suppliergroup', 'id', 'PR'),
+                'id' => get_kode('suppliergroup', 'id', 'SG'),
                 'description' => $this->request->getVar('description'),
                 'parent' => $this->request->getVar('parent'),
                 'isgroup' => $this->request->getVar('group'),
@@ -120,13 +107,21 @@ class SupplierGroupController extends ResourceController
                 'created_at' => date('Y-m-d H:i:s'),
             ];
 
-            $this->model->insert($data);
+            $created = $this->model->insert($data);
 
-            $msg = [
-                'status'        => 200,
-                'message'       => 'Data berhasil di buat',
-                'data'          => [],
-            ];
+            if ($created) {
+                $msg = [
+                    'status'        => 200,
+                    'message'       => 'Data berhasil di buat',
+                    'data'          => [],
+                ];
+            }else {
+                $msg = [
+                    'status'        => 500,
+                    'message'       => 'Data gagal di buat',
+                    'data'          => [],
+                ];
+            }
         }
 
         return $this->respond($msg, $msg['status']);
@@ -139,22 +134,7 @@ class SupplierGroupController extends ResourceController
      */
     public function edit($id = null)
     {
-        $query = $this->model->find($id);
-
-        if (count($query) > 0) {
-            $msg = [
-                'status'        => 200,
-                'message'       => 'Semua data group suplier',
-                'data'          => $query,
-            ];
-        } else {
-            $msg = [
-                'status'        => 404,
-                'message'       => 'Data tidak ditemukan',
-                'data'          => [],
-            ];
-        }
-        return $this->respond($msg, $msg['status']);
+        //
     }
 
     /**
@@ -171,18 +151,7 @@ class SupplierGroupController extends ResourceController
                     'required' => 'Deskripsi harus di isi'
                 ]
             ],
-            'parent' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Sub Form harus di isi'
-                ]
-            ],
-            'group' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Group harus di isi'
-                ]
-            ],
+            
         ]);
 
         if (!$validasi) {
@@ -191,32 +160,38 @@ class SupplierGroupController extends ResourceController
                 'message'       => 'Validation error',
                 'data' => [
                     'description' => $this->validation->getError('description'),
-                    'parent' => $this->validation->getError('parent'),
-                    'group' => $this->validation->getError('group'),
                 ]
             ];
         } else {
-            $data = $this->request->getRawInput();
-            $data['usercreate'] = '';
-            $data['updated_at'] = date('Y-m-d H:i:s');
-            // $data = [
-            //     'description' => $raw['description'],
-            //     'parent' => $raw['parent'],
-            //     'isgroup' => $raw['group'],
-            //     'payableacc' => $raw['payableacc'],
-            //     'downpaymentacc' => $raw['downpaymentacc'],
-            //     'purchasediscacc' => $raw['purchasediscacc'],
-            //     'gainlosspayableacc' => $raw['gainlosspayableacc'],
-            //     'usercreate' => '',
-            //     'updated_at' => date('Y-m-d H:i:s'),
-            // ];
-            $this->model->update(['id' => $id], $data);
-
-            $msg = [
-                'status'        => 200,
-                'message'       => 'Data berhasil di update',
-                'data'          => [],
+            // $data = $this->request->getRawInput();
+            // $data['usercreate'] = '';
+            // $data['updated_at'] = date('Y-m-d H:i:s');
+            $data = [
+                'description' => $this->request->getVar('description'),
+                'parent' => $this->request->getVar('parent'),
+                'isgroup' => $this->request->getVar('group'),
+                'payableacc' => $this->request->getVar('payableacc'),
+                'downpaymentacc' => $this->request->getVar('downpaymentacc'),
+                'purchasediscacc' => $this->request->getVar('purchasediscacc'),
+                'gainlosspayableacc' => $this->request->getVar('gainlosspayableacc'),
+                'usercreate' => '',
+                'updated_at' => date('Y-m-d H:i:s'),
             ];
+            $updated = $this->model->update(['id' => $id], $data);
+
+            if ($updated) {
+                $msg = [
+                    'status'        => 200,
+                    'message'       => 'Data berhasil di update',
+                    'data'          => [],
+                ];
+            }else{
+                $msg = [
+                    'status'        => 500,
+                    'message'       => 'Data gagal di update',
+                    'data'          => [],
+                ];
+            }
         }
 
         return $this->respond($msg, $msg['status']);

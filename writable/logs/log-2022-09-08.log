@@ -1,0 +1,224 @@
+ERROR - 2022-09-08 11:35:04 --> mysqli_sql_exception: Table 'erp.supliergroup' doesn't exist in D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Model.php(223): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\Developer\codeigniter4-erp-clg\app\Controllers\SuplierGroupController.php(23): CodeIgniter\BaseModel->findAll()
+#7 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(907): App\Controllers\SuplierGroupController->index()
+#8 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SuplierGroupController))
+#9 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Developer\codeigniter4-erp-clg\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\Developer\\co...')
+#12 {main}
+CRITICAL - 2022-09-08 11:35:04 --> Table 'erp.supliergroup' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `supliergroup`
+WHERE `supliergroup`.`deleted_at` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `supliergroup`
+WHERE `supliergroup`.`deleted_at` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `supliergroup`
+WHERE `supliergroup`.`deleted_at` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `supliergroup`
+WHERE `supliergroup`.`deleted_at` IS NULL', [], false)
+ 5 SYSTEMPATH\Model.php(223): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\SuplierGroupController.php(23): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SuplierGroupController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SuplierGroupController))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-08 11:59:03 --> Call to undefined function App\Controllers\get_kode()
+in APPPATH\Controllers\SupplierGroupController.php on line 76.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierGroupController->create()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierGroupController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-08 11:59:26 --> Call to undefined function App\Controllers\get_kode()
+in APPPATH\Controllers\SupplierGroupController.php on line 76.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierGroupController->create()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierGroupController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-09-08 12:45:02 --> mysqli_sql_exception: Column 'description' cannot be null in D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `su...', 0)
+#1 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `su...')
+#2 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `su...')
+#3 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `su...', Array, false)
+#4 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Model.php(279): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Model.php(667): CodeIgniter\BaseModel->insert(Array, true)
+#7 D:\Developer\codeigniter4-erp-clg\app\Controllers\SupplierGroupController.php(111): CodeIgniter\Model->insert(Array)
+#8 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(907): App\Controllers\SupplierGroupController->create()
+#9 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierGroupController))
+#10 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Developer\codeigniter4-erp-clg\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\Developer\\co...')
+#13 {main}
+CRITICAL - 2022-09-08 12:45:02 --> Column 'description' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `suppliergroup` (`id`, `description`, `parent`, `isgroup`, `payableacc`, `downpaymentacc`, `purchasediscacc`, `gainlosspayableacc`, `usercreate`, `created_at`, `updated_at`) VALUES (\'PR-00000000001\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, \'\', \'2022-09-08 12:45:02\', \'2022-09-08 12:45:02\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `suppliergroup` (`id`, `description`, `parent`, `isgroup`, `payableacc`, `downpaymentacc`, `purchasediscacc`, `gainlosspayableacc`, `usercreate`, `created_at`, `updated_at`) VALUES (\'PR-00000000001\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, \'\', \'2022-09-08 12:45:02\', \'2022-09-08 12:45:02\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `suppliergroup` (`id`, `description`, `parent`, `isgroup`, `payableacc`, `downpaymentacc`, `purchasediscacc`, `gainlosspayableacc`, `usercreate`, `created_at`, `updated_at`) VALUES (\'PR-00000000001\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, \'\', \'2022-09-08 12:45:02\', \'2022-09-08 12:45:02\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `suppliergroup` (`id`, `description`, `parent`, `isgroup`, `payableacc`, `downpaymentacc`, `purchasediscacc`, `gainlosspayableacc`, `usercreate`, `created_at`, `updated_at`) VALUES (:id:, :description:, :parent:, :isgroup:, :payableacc:, :downpaymentacc:, :purchasediscacc:, :gainlosspayableacc:, :usercreate:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(279): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(738): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(667): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\SupplierGroupController.php(111): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierGroupController->create()
+10 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierGroupController))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-09-08 12:46:30 --> mysqli_sql_exception: Column 'description' cannot be null in D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `su...', 0)
+#1 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `su...')
+#2 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `su...')
+#3 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `su...', Array, false)
+#4 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Model.php(279): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Model.php(667): CodeIgniter\BaseModel->insert(Array, true)
+#7 D:\Developer\codeigniter4-erp-clg\app\Controllers\SupplierGroupController.php(111): CodeIgniter\Model->insert(Array)
+#8 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(907): App\Controllers\SupplierGroupController->create()
+#9 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierGroupController))
+#10 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Developer\codeigniter4-erp-clg\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\Developer\\co...')
+#13 {main}
+CRITICAL - 2022-09-08 12:46:30 --> Column 'description' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `suppliergroup` (`id`, `description`, `parent`, `isgroup`, `payableacc`, `downpaymentacc`, `purchasediscacc`, `gainlosspayableacc`, `usercreate`) VALUES (\'PR-00000000001\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, \'\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `suppliergroup` (`id`, `description`, `parent`, `isgroup`, `payableacc`, `downpaymentacc`, `purchasediscacc`, `gainlosspayableacc`, `usercreate`) VALUES (\'PR-00000000001\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, \'\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `suppliergroup` (`id`, `description`, `parent`, `isgroup`, `payableacc`, `downpaymentacc`, `purchasediscacc`, `gainlosspayableacc`, `usercreate`) VALUES (\'PR-00000000001\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, \'\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `suppliergroup` (`id`, `description`, `parent`, `isgroup`, `payableacc`, `downpaymentacc`, `purchasediscacc`, `gainlosspayableacc`, `usercreate`) VALUES (:id:, :description:, :parent:, :isgroup:, :payableacc:, :downpaymentacc:, :purchasediscacc:, :gainlosspayableacc:, :usercreate:)', [...], false)
+ 5 SYSTEMPATH\Model.php(279): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(738): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(667): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\SupplierGroupController.php(111): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierGroupController->create()
+10 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierGroupController))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-08 13:59:26 --> syntax error, unexpected '}', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$'
+in APPPATH\Controllers\SupplierGroupController.php on line 217.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\SupplierGroupController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\SupplierGroupController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\SupplierGroupController')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\SupplierGroupController')
+ 5 SYSTEMPATH\CodeIgniter.php(857): class_exists('\\App\\Controllers\\SupplierGroupController', true)
+ 6 SYSTEMPATH\CodeIgniter.php(444): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-08 14:34:39 --> Call to a member function update() on null
+in APPPATH\Controllers\SupplierGroupController.php on line 195.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierGroupController->update('PR-00000000002')
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierGroupController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-08 14:35:00 --> Call to a member function update() on null
+in APPPATH\Controllers\SupplierGroupController.php on line 195.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierGroupController->update('PR-00000000003')
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierGroupController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-08 14:35:27 --> Call to a member function update() on null
+in APPPATH\Controllers\SupplierGroupController.php on line 195.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierGroupController->update('PR-00000000003')
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierGroupController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-08 14:35:46 --> Call to a member function update() on null
+in APPPATH\Controllers\SupplierGroupController.php on line 195.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierGroupController->update('PR-00000000003')
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierGroupController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-08 14:36:10 --> Call to a member function findAll() on null
+in APPPATH\Controllers\SupplierGroupController.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierGroupController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierGroupController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-08 14:38:25 --> Call to a member function findAll() on null
+in APPPATH\Controllers\SupplierGroupController.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierGroupController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierGroupController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-08 14:46:56 --> Call to undefined function App\Controllers\get_kode()
+in APPPATH\Controllers\SupplierGroupController.php on line 198.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierGroupController->update('PR-00000000005')
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierGroupController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-08 14:47:16 --> Call to undefined function App\Controllers\get_kode()
+in APPPATH\Controllers\SupplierGroupController.php on line 198.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierGroupController->update('PR-00000000005')
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierGroupController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-08 15:13:54 --> Trying to get property 'description' of non-object
+in APPPATH\Controllers\SupplierGroupController.php on line 199.
+ 1 APPPATH\Controllers\SupplierGroupController.php(199): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'description\' of non-object', 'APPPATH\\Controllers\\SupplierGroupController.php', 199, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierGroupController->update('PR-00000000014')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierGroupController))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-08 15:14:20 --> Undefined index: payableacc
+in APPPATH\Controllers\SupplierGroupController.php on line 202.
+ 1 APPPATH\Controllers\SupplierGroupController.php(202): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: payableacc', 'APPPATH\\Controllers\\SupplierGroupController.php', 202, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierGroupController->update('PR-00000000014')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierGroupController))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-08 15:17:35 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 846.
+ 1 SYSTEMPATH\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(693): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\SupplierGroupController.php(213): CodeIgniter\Model->update([...], [...])
+ 4 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierGroupController->update('PR-00000000014')
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierGroupController))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-08 15:17:47 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 846.
+ 1 SYSTEMPATH\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(693): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\SupplierGroupController.php(213): CodeIgniter\Model->update([...], [...])
+ 4 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierGroupController->update('PR-00000000014')
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierGroupController))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-08 15:21:59 --> Undefined property: App\Controllers\SupplierGroupController::$validation
+in APPPATH\Controllers\SupplierGroupController.php on line 191.
+ 1 APPPATH\Controllers\SupplierGroupController.php(191): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: App\\Controllers\\SupplierGroupController::$validation', 'APPPATH\\Controllers\\SupplierGroupController.php', 191, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierGroupController->update('PR-00000000014')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierGroupController))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
