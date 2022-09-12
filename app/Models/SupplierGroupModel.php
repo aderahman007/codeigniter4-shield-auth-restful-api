@@ -13,7 +13,7 @@ class SupplierGroupModel extends Model
     protected $allowedFields    = ['id', 'description', 'parent', 'isgroup', 'payableacc', 'downpaymentacc', 'rewardacc', 'purchasediscacc', 'gainlosspayableacc', 'usercreate', 'useredit', 'created_at', 'updated_at', 'deleted_at'];
 
     // Dates
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
     protected $deletedField  = 'deleted_at';
 

@@ -31,7 +31,7 @@ class SupplierController extends ResourceController
         $data = [
             'status' => 200,
             'message' => '',
-            'data' => $suppliers,
+            'data' => ['suppliers' => $suppliers],
         ];
 
         return $this->respond($data, 200);
@@ -45,11 +45,19 @@ class SupplierController extends ResourceController
     public function show($id = null)
     {
         $suppliers = $this->model->find($id);
-        $data = [
-            'status' => 200,
-            'message' => '',
-            'data' => $suppliers,
-        ];
+        if ($suppliers) {
+            $data = [
+                'status' => 200,
+                'message' => 'Data supplier by id',
+                'data' => ['suppliers' => $suppliers],
+            ];
+        }else {
+            $data = [
+                'status' => 404,
+                'message' => 'Data tidak ditemukan',
+                'data' => [],
+            ];
+        }
 
         return $this->respond($data, 200);
     }

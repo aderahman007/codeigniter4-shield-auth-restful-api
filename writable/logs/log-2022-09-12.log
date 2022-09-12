@@ -1,0 +1,40 @@
+CRITICAL - 2022-09-12 10:27:23 --> Trying to get property 'description' of non-object
+in APPPATH\Controllers\SupplierGroupController.php on line 172.
+ 1 APPPATH\Controllers\SupplierGroupController.php(172): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'description\' of non-object', 'APPPATH\\Controllers\\SupplierGroupController.php', 172, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierGroupController->update('SG-00000000009')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierGroupController))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-12 10:30:35 --> Undefined variable: json
+in APPPATH\Controllers\SupplierGroupController.php on line 193.
+ 1 APPPATH\Controllers\SupplierGroupController.php(193): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: json', 'APPPATH\\Controllers\\SupplierGroupController.php', 193, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierGroupController->update('SG-00000000001')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierGroupController))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-12 10:30:56 --> Trying to get property 'description' of non-object
+in APPPATH\Controllers\SupplierGroupController.php on line 191.
+ 1 APPPATH\Controllers\SupplierGroupController.php(191): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'description\' of non-object', 'APPPATH\\Controllers\\SupplierGroupController.php', 191, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierGroupController->update('SG-00000000001')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierGroupController))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-12 10:55:17 --> Cannot modify header information - headers already sent by (output started at D:\Developer\codeigniter4-erp-clg\app\Config\Events.php:32)
+in APPPATH\Filters\Cors.php on line 13.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify header information - headers already sent by (output started at D:\\Developer\\codeigniter4-erp-clg\\app\\Config\\Events.php:32)', 'APPPATH\\Filters\\Cors.php', 13, [...])
+ 2 APPPATH\Filters\Cors.php(13): header('Access-Control-Allow-Origin: *')
+ 3 SYSTEMPATH\Filters\Filters.php(173): App\Filters\Cors->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(431): CodeIgniter\Filters\Filters->run('api/v1/suppliergroup/SG-00000000003', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-12 11:13:01 --> Call to a member function findAll() on null
+in APPPATH\Controllers\SupplierGroupController.php on line 31.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierGroupController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierGroupController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
