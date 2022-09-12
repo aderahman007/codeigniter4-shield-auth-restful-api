@@ -38,3 +38,232 @@ in APPPATH\Controllers\SupplierGroupController.php on line 31.
  3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
  5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-12 12:25:58 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\SupplierController.php on line 156.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierController->update('SP-00000000001')
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-12 12:28:49 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 846.
+ 1 SYSTEMPATH\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(693): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\SupplierController.php(158): CodeIgniter\Model->update([...], [...])
+ 4 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierController->update('SP-00000000001')
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierController))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-12 12:37:06 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1577.
+ 1 SYSTEMPATH\BaseModel.php(1577): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray([], 'update')
+ 3 SYSTEMPATH\Model.php(693): CodeIgniter\BaseModel->update([...], [])
+ 4 APPPATH\Controllers\SupplierController.php(158): CodeIgniter\Model->update([...], [])
+ 5 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierController->update('SP-00000000001')
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-09-12 12:39:23 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`erp`.`supplier`, CONSTRAINT `supplier_ibfk_1` FOREIGN KEY (`suppliergroup`) REFERENCES `suppliergroup` (`id`) ON UPDATE CASCADE) in C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `su...', 0)
+#1 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `su...')
+#2 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `su...')
+#3 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `su...', Array, false)
+#4 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Model.php(279): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Model.php(667): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp2\htdocs\codeigniter4-erp-clg\app\Controllers\SupplierController.php(102): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(907): App\Controllers\SupplierController->create()
+#10 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierController))
+#11 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp2\htdocs\codeigniter4-erp-clg\public\index.php(73): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp2\\htdoc...')
+#14 {main}
+CRITICAL - 2022-09-12 12:39:23 --> Cannot add or update a child row: a foreign key constraint fails (`erp`.`supplier`, CONSTRAINT `supplier_ibfk_1` FOREIGN KEY (`suppliergroup`) REFERENCES `suppliergroup` (`id`) ON UPDATE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `supplier` (`id`, `created_at`, `updated_at`) VALUES (\'SP-00000000004\', \'2022-09-12 12:39:23\', \'2022-09-12 12:39:23\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `supplier` (`id`, `created_at`, `updated_at`) VALUES (\'SP-00000000004\', \'2022-09-12 12:39:23\', \'2022-09-12 12:39:23\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `supplier` (`id`, `created_at`, `updated_at`) VALUES (\'SP-00000000004\', \'2022-09-12 12:39:23\', \'2022-09-12 12:39:23\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `supplier` (`id`, `created_at`, `updated_at`) VALUES (:id.1:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(279): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(738): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(667): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(658): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\SupplierController.php(102): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierController->create()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierController))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-09-12 12:42:00 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`erp`.`supplier`, CONSTRAINT `supplier_ibfk_1` FOREIGN KEY (`suppliergroup`) REFERENCES `suppliergroup` (`id`) ON UPDATE CASCADE) in C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `su...', 0)
+#1 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `su...')
+#2 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `su...')
+#3 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `su...', Array, false)
+#4 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Model.php(279): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Model.php(667): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp2\htdocs\codeigniter4-erp-clg\app\Controllers\SupplierController.php(102): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(907): App\Controllers\SupplierController->create()
+#10 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierController))
+#11 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp2\htdocs\codeigniter4-erp-clg\public\index.php(73): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp2\\htdoc...')
+#14 {main}
+CRITICAL - 2022-09-12 12:42:00 --> Cannot add or update a child row: a foreign key constraint fails (`erp`.`supplier`, CONSTRAINT `supplier_ibfk_1` FOREIGN KEY (`suppliergroup`) REFERENCES `suppliergroup` (`id`) ON UPDATE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `supplier` (`id`, `created_at`, `updated_at`) VALUES (\'SP-00000000004\', \'2022-09-12 12:42:00\', \'2022-09-12 12:42:00\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `supplier` (`id`, `created_at`, `updated_at`) VALUES (\'SP-00000000004\', \'2022-09-12 12:42:00\', \'2022-09-12 12:42:00\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `supplier` (`id`, `created_at`, `updated_at`) VALUES (\'SP-00000000004\', \'2022-09-12 12:42:00\', \'2022-09-12 12:42:00\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `supplier` (`id`, `created_at`, `updated_at`) VALUES (:id.1:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(279): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(738): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(667): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(658): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\SupplierController.php(102): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierController->create()
+11 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierController))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-12 12:53:48 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\SupplierController.php on line 100.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierController->create()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-12 12:54:03 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\SupplierController.php on line 100.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierController->create()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-12 13:35:11 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\SupplierController.php on line 100.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierController->create()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-12 13:36:52 --> json_decode() expects parameter 1 to be string, object given
+in APPPATH\Controllers\SupplierController.php on line 99.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'json_decode() expects parameter 1 to be string, object given', 'APPPATH\\Controllers\\SupplierController.php', 99, [...])
+ 2 APPPATH\Controllers\SupplierController.php(99): json_decode(Object(stdClass))
+ 3 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierController->create()
+ 4 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierController))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-12 13:37:17 --> json_decode() expects parameter 1 to be string, object given
+in APPPATH\Controllers\SupplierController.php on line 99.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'json_decode() expects parameter 1 to be string, object given', 'APPPATH\\Controllers\\SupplierController.php', 99, [...])
+ 2 APPPATH\Controllers\SupplierController.php(99): json_decode(Object(stdClass))
+ 3 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierController->create()
+ 4 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierController))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-12 13:37:32 --> json_decode() expects parameter 1 to be string, object given
+in APPPATH\Controllers\SupplierController.php on line 99.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'json_decode() expects parameter 1 to be string, object given', 'APPPATH\\Controllers\\SupplierController.php', 99, [...])
+ 2 APPPATH\Controllers\SupplierController.php(99): json_decode(Object(stdClass))
+ 3 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierController->create()
+ 4 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierController))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-12 14:03:07 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1577.
+ 1 SYSTEMPATH\BaseModel.php(1577): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray([], 'update')
+ 3 SYSTEMPATH\Model.php(693): CodeIgniter\BaseModel->update([...], [])
+ 4 APPPATH\Controllers\SupplierController.php(161): CodeIgniter\Model->update([...], [])
+ 5 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierController->update('SP-00000000001')
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-12 14:03:27 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1577.
+ 1 SYSTEMPATH\BaseModel.php(1577): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray([], 'update')
+ 3 SYSTEMPATH\Model.php(693): CodeIgniter\BaseModel->update([...], [])
+ 4 APPPATH\Controllers\SupplierController.php(161): CodeIgniter\Model->update([...], [])
+ 5 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\SupplierController->update('SP-00000000001')
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-09-12 16:16:40 --> mysqli_sql_exception: Unknown column 'productbrand.deleted_at' in 'where clause' in C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Model.php(223): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp2\htdocs\codeigniter4-erp-clg\app\Controllers\ProductBrandController.php(27): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(907): App\Controllers\ProductBrandController->index()
+#8 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductBrandController))
+#9 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp2\htdocs\codeigniter4-erp-clg\public\index.php(73): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp2\htdocs\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp2\\htdoc...')
+#12 {main}
+CRITICAL - 2022-09-12 16:16:40 --> Unknown column 'productbrand.deleted_at' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `productbrand`
+WHERE `productbrand`.`deleted_at` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `productbrand`
+WHERE `productbrand`.`deleted_at` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `productbrand`
+WHERE `productbrand`.`deleted_at` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `productbrand`
+WHERE `productbrand`.`deleted_at` IS NULL', [], false)
+ 5 SYSTEMPATH\Model.php(223): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\ProductBrandController.php(27): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\ProductBrandController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductBrandController))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-12 16:47:14 --> Call to a member function findAll() on null
+in APPPATH\Controllers\ProductGroupController.php on line 27.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\ProductGroupController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductGroupController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-12 16:47:21 --> Call to a member function findAll() on null
+in APPPATH\Controllers\ProductGroupController.php on line 27.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\ProductGroupController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductGroupController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-12 16:49:42 --> Call to a member function findAll() on null
+in APPPATH\Controllers\ProductGroupController.php on line 27.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\ProductGroupController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductGroupController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-12 16:51:06 --> Call to undefined function App\Controllers\get_kode()
+in APPPATH\Controllers\ProductGroupController.php on line 96.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\ProductGroupController->create()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductGroupController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

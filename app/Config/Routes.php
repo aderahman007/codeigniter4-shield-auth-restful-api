@@ -40,7 +40,9 @@ $routes->set404Override();
 $routes->get('/', 'HomeController::index');
 $routes->get('tes', 'HomeController::getTes');
 
-$routes->group('api/v1', function($routes){
+$routes->group('api/v1', function ($routes) {
+    $routes->resource('productgroup', ['controller' => 'ProductGroupController']);
+    $routes->resource('productbrand', ['controller' => 'ProductBrandController']);
     $routes->resource('supplier', ['controller' => 'SupplierController']);
     $routes->resource('suppliergroup', ['controller' => 'SupplierGroupController']);
 });
