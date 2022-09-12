@@ -3,12 +3,11 @@
 namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
-use App\Models\SupplierModel;
 
-class SupplierController extends ResourceController
+class ProductBrandController extends ResourceController
 {
 
-    protected $modelName = 'App\Models\SupplierModel';
+    protected $modelName = 'App\Models\ProductBrandModel';
     protected $format    = 'json';
     protected $validation;
 
@@ -18,7 +17,6 @@ class SupplierController extends ResourceController
         $this->validation = \Config\Services::validation();
     }
 
-
     /**
      * Return an array of resource objects, themselves in array format
      *
@@ -26,11 +24,11 @@ class SupplierController extends ResourceController
      */
     public function index()
     {
-        $suppliers = $this->model->findAll();
+        $product_brand = $this->model->findAll();
         $data = [
             'status' => 200,
             'message' => '',
-            'data' => ['suppliers' => $suppliers],
+            'data' => ['product_brand' => $product_brand],
         ];
 
         return $this->respond($data, 200);
@@ -43,12 +41,12 @@ class SupplierController extends ResourceController
      */
     public function show($id = null)
     {
-        $suppliers = $this->model->find($id);
-        if ($suppliers) {
+        $product_brand = $this->model->find($id);
+        if ($product_brand) {
             $data = [
                 'status' => 200,
-                'message' => 'Data supplier by id',
-                'data' => ['suppliers' => $suppliers],
+                'message' => 'Data product brand by id',
+                'data' => ['product_brand' => $product_brand],
             ];
         } else {
             $data = [
@@ -78,25 +76,17 @@ class SupplierController extends ResourceController
      */
     public function create()
     {
-
-        // $id = $this->request->getPost('id');
         $validasi = $this->validate([
             'name' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => 'Nama Harus di isi'
-                ],
-            ],
-            'suppliergroup' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Supplier-Group Harus di isi'
+                    'required' => 'Nama Brand Harus di isi'
                 ],
             ],
         ]);
         if ($validasi) {
             $data =  (array) $this->request->getVar();
-            $data['id'] = get_kode('supplier', 'id', 'SP');
+            $data['id'] = get_kode('productbrand', 'id', 'PB');
             // return $this->respond($data, 200);
             // print_r($data);
             // die;
@@ -104,14 +94,14 @@ class SupplierController extends ResourceController
             if ($this->model->save($data)) {
                 $msg = [
                     'status' => 200,
-                    'message' => 'Supplier berhasil ditambah',
+                    'message' => 'Product brand berhasil ditambah',
                     'data' => $data,
                 ];
                 return $this->respond($msg, 200);
             } else {
                 $msg = [
                     'status' => 500,
-                    'message' => 'Supplier gagal ditambah',
+                    'message' => 'Product brand gagal ditambah',
                     'data' => [],
                 ];
                 return $this->respond($msg, 500);
@@ -122,7 +112,6 @@ class SupplierController extends ResourceController
                 'message' => 'Validasi error',
                 'data' => [
                     'name' => $this->validation->getError('name'),
-                    'suppliergroup' => $this->validation->getError('suppliergroup'),
                 ],
             ];
             return $this->respond($msg, 500);
@@ -136,6 +125,7 @@ class SupplierController extends ResourceController
      */
     public function edit($id = null)
     {
+        //
     }
 
     /**
@@ -149,7 +139,7 @@ class SupplierController extends ResourceController
             'name' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => 'Nama Harus di isi'
+                    'required' => 'Nama Brand Harus di isi'
                 ],
             ],
         ]);
@@ -160,14 +150,14 @@ class SupplierController extends ResourceController
             if ($this->model->update(['id' => $id], $data)) {
                 $msg = [
                     'status' => 200,
-                    'message' => 'Supplier berhasil diubah',
+                    'message' => 'Product brand berhasil diubah',
                     'data' => $data,
                 ];
                 return $this->respond($msg, 200);
             } else {
                 $msg = [
                     'status' => 500,
-                    'message' => 'Supplier gagal diubah',
+                    'message' => 'Product brand gagal diubah',
                     'data' => [],
                 ];
                 return $this->respond($msg, 500);
@@ -178,7 +168,6 @@ class SupplierController extends ResourceController
                 'message' => 'Validasi error',
                 'data' => [
                     'name' => $this->validation->getError('name'),
-                    'suppliergroup' => $this->validation->getError('suppliergroup'),
                 ],
             ];
             return $this->respond($msg, 500);
@@ -196,14 +185,14 @@ class SupplierController extends ResourceController
         if ($this->model->db->affectedRows() === 0) {
             $msg = [
                 'status' => 404,
-                'message' => 'Supplier dengan id ' . $id . ' tidak ditemukan atau sudah dihapus',
+                'message' => 'Product brand dengan id ' . $id . ' tidak ditemukan atau sudah dihapus',
                 'data' => [],
             ];
             return $this->respond($msg, 404);
         }
         $msg = [
             'status' => 200,
-            'message' => 'Supplier berhasil dihapus',
+            'message' => 'Product brand berhasil dihapus',
             'data' => [],
         ];
         return $this->respond($msg, 200);
