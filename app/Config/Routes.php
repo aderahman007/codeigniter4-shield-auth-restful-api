@@ -41,6 +41,8 @@ $routes->get('/', 'HomeController::index');
 $routes->get('tes', 'HomeController::getTes');
 
 $routes->group('api/v1', function ($routes) {
+    $routes->resource('product', ['controller' => 'ProductController']);
+    $routes->resource('unit', ['controller' => 'UnitController']);
     $routes->resource('productgroup', ['controller' => 'ProductGroupController']);
     $routes->resource('productbrand', ['controller' => 'ProductBrandController']);
     $routes->resource('supplier', ['controller' => 'SupplierController']);
