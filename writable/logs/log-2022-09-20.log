@@ -1,0 +1,89 @@
+CRITICAL - 2022-09-20 09:57:36 --> Call to a member function addGroup() on array
+in APPPATH\Controllers\Shield\UsersController.php on line 251.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Shield\UsersController->addGroup()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\UsersController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-20 10:07:04 --> Call to a member function addGroup() on array
+in APPPATH\Controllers\Shield\UsersController.php on line 251.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Shield\UsersController->addGroup()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\UsersController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-20 10:08:51 --> json_decode() expects parameter 1 to be string, array given
+in APPPATH\Controllers\Shield\UsersController.php on line 255.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'json_decode() expects parameter 1 to be string, array given', 'APPPATH\\Controllers\\Shield\\UsersController.php', 255, [...])
+ 2 APPPATH\Controllers\Shield\UsersController.php(255): json_decode([...])
+ 3 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Shield\UsersController->addGroup()
+ 4 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\UsersController))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-20 10:13:25 --> Call to a member function addGroup() on array
+in APPPATH\Controllers\Shield\UsersController.php on line 251.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Shield\UsersController->addGroup()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\UsersController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-20 10:14:16 --> Call to a member function addGroup() on array
+in APPPATH\Controllers\Shield\UsersController.php on line 252.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Shield\UsersController->addGroup()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\UsersController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-20 10:24:30 --> Array to string conversion
+in APPPATH\Controllers\Shield\UsersController.php on line 256.
+ 1 APPPATH\Controllers\Shield\UsersController.php(256): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string conversion', 'APPPATH\\Controllers\\Shield\\UsersController.php', 256, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Shield\UsersController->addGroup()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\UsersController))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-20 10:27:34 --> Call to a member function addGroup() on array
+in APPPATH\Controllers\Shield\UsersController.php on line 252.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Shield\UsersController->addGroup()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\UsersController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-20 10:28:06 --> Call to a member function addGroup() on array
+in APPPATH\Controllers\Shield\UsersController.php on line 252.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Shield\UsersController->addGroup()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\UsersController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-20 10:28:36 --> Call to a member function addGroup() on array
+in APPPATH\Controllers\Shield\UsersController.php on line 251.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Shield\UsersController->addGroup()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\UsersController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-20 10:28:46 --> Call to a member function addGroup() on array
+in APPPATH\Controllers\Shield\UsersController.php on line 251.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Shield\UsersController->addGroup()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\UsersController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-20 10:33:35 --> Call to a member function addGroup() on null
+in APPPATH\Controllers\Shield\UsersController.php on line 252.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Shield\UsersController->addGroup()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\UsersController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-20 10:42:28 --> user is not a valid group.
+in VENDORPATH\codeigniter4\shield\src\Authorization\AuthorizationException.php on line 13.
+ 1 VENDORPATH\codeigniter4\shield\src\Authorization\Traits\Authorizable.php(38): CodeIgniter\Shield\Authorization\AuthorizationException::forUnknownGroup('user')
+ 2 APPPATH\Controllers\Shield\UsersController.php(253): CodeIgniter\Shield\Entities\User->addGroup('user')
+ 3 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Shield\UsersController->addGroup()
+ 4 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\UsersController))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

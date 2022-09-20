@@ -1,0 +1,267 @@
+ERROR - 2022-09-19 09:41:36 --> mysqli_sql_exception: Table 'erp.auth_group' doesn't exist in D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Model.php(223): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\Developer\codeigniter4-erp-clg\app\Controllers\Shield\AuthGroupController.php(26): CodeIgniter\BaseModel->findAll()
+#7 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(907): App\Controllers\Shield\AuthGroupController->index()
+#8 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\AuthGroupController))
+#9 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Developer\codeigniter4-erp-clg\public\index.php(73): CodeIgniter\CodeIgniter->run()
+#11 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\Developer\\co...')
+#12 {main}
+CRITICAL - 2022-09-19 09:41:36 --> Table 'erp.auth_group' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `auth_group`
+WHERE `auth_group`.`deleted_at` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `auth_group`
+WHERE `auth_group`.`deleted_at` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `auth_group`
+WHERE `auth_group`.`deleted_at` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `auth_group`
+WHERE `auth_group`.`deleted_at` IS NULL', [], false)
+ 5 SYSTEMPATH\Model.php(223): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Shield\AuthGroupController.php(26): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Shield\AuthGroupController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\AuthGroupController))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-19 10:32:56 --> Call to a member function affectedRows() on bool
+in APPPATH\Controllers\Shield\AuthPermissionController.php on line 212.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Shield\AuthPermissionController->update('1')
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\AuthPermissionController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-09-19 13:54:22 --> mysqli_sql_exception: Table 'erp.auth_permission_group' doesn't exist in D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SHOW COLUMNS FR...', 0)
+#1 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SHOW COLUMNS FR...')
+#2 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SHOW COLUMNS FR...')
+#3 D:\Developer\codeigniter4-erp-clg\app\Helpers\general_helper.php(12): CodeIgniter\Database\BaseConnection->query('SHOW COLUMNS FR...')
+#4 D:\Developer\codeigniter4-erp-clg\app\Models\Shield\AuthPermissionGroupModel.php(22): allfields('auth_permission...')
+#5 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Config\Factories.php(126): App\Models\Shield\AuthPermissionGroupModel->__construct(NULL)
+#6 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Config\Factories.php(83): CodeIgniter\Config\Factories::__callStatic('models', Array)
+#7 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Common.php(817): CodeIgniter\Config\Factories::models('App\\Models\\Shie...', Array, NULL)
+#8 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\RESTful\BaseResource.php(54): model('App\\Models\\Shie...')
+#9 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\RESTful\BaseResource.php(37): CodeIgniter\RESTful\BaseResource->setModel('App\\Models\\Shie...')
+#10 D:\Developer\codeigniter4-erp-clg\app\Controllers\BaseApiController.php(15): CodeIgniter\RESTful\BaseResource->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#11 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(870): App\Controllers\BaseApiController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#12 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(448): CodeIgniter\CodeIgniter->createController()
+#13 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#14 D:\Developer\codeigniter4-erp-clg\public\index.php(73): CodeIgniter\CodeIgniter->run()
+#15 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\Developer\\co...')
+#16 {main}
+CRITICAL - 2022-09-19 13:54:22 --> Table 'erp.auth_permission_group' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SHOW COLUMNS FROM auth_permission_group;', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SHOW COLUMNS FROM auth_permission_group;')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SHOW COLUMNS FROM auth_permission_group;')
+ 4 APPPATH\Helpers\general_helper.php(12): CodeIgniter\Database\BaseConnection->query('SHOW COLUMNS FROM auth_permission_group;')
+ 5 APPPATH\Models\Shield\AuthPermissionGroupModel.php(22): allfields('auth_permission_group')
+ 6 SYSTEMPATH\Config\Factories.php(126): App\Models\Shield\AuthPermissionGroupModel->__construct(null)
+ 7 SYSTEMPATH\Config\Factories.php(83): CodeIgniter\Config\Factories::__callStatic('models', [...])
+ 8 SYSTEMPATH\Common.php(817): CodeIgniter\Config\Factories::models('App\\Models\\Shield\\AuthPermissionGroupModel', [...], null)
+ 9 SYSTEMPATH\RESTful\BaseResource.php(54): model('App\\Models\\Shield\\AuthPermissionGroupModel')
+10 SYSTEMPATH\RESTful\BaseResource.php(37): CodeIgniter\RESTful\BaseResource->setModel('App\\Models\\Shield\\AuthPermissionGroupModel')
+11 APPPATH\Controllers\BaseApiController.php(15): CodeIgniter\RESTful\BaseResource->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+12 SYSTEMPATH\CodeIgniter.php(870): App\Controllers\BaseApiController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+13 SYSTEMPATH\CodeIgniter.php(448): CodeIgniter\CodeIgniter->createController()
+14 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-19 13:54:47 --> Argument 1 passed to CodeIgniter\Database\BaseResult::getResult() must be of the type string, null given, called in D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Model.php on line 224
+in SYSTEMPATH\Database\BaseResult.php on line 96.
+ 1 SYSTEMPATH\Model.php(224): CodeIgniter\Database\BaseResult->getResult(null)
+ 2 SYSTEMPATH\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+ 3 APPPATH\Controllers\Shield\AuthPermissionGroupController.php(26): CodeIgniter\BaseModel->findAll()
+ 4 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Shield\AuthPermissionGroupController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\AuthPermissionGroupController))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-19 13:55:24 --> Argument 1 passed to CodeIgniter\Database\BaseResult::getResult() must be of the type string, null given, called in D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Model.php on line 224
+in SYSTEMPATH\Database\BaseResult.php on line 96.
+ 1 SYSTEMPATH\Model.php(224): CodeIgniter\Database\BaseResult->getResult(null)
+ 2 SYSTEMPATH\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+ 3 APPPATH\Controllers\Shield\AuthPermissionGroupController.php(26): CodeIgniter\BaseModel->findAll()
+ 4 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Shield\AuthPermissionGroupController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\AuthPermissionGroupController))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-19 13:57:24 --> Argument 1 passed to CodeIgniter\Database\BaseResult::getResult() must be of the type string, null given, called in D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Model.php on line 224
+in SYSTEMPATH\Database\BaseResult.php on line 96.
+ 1 SYSTEMPATH\Model.php(224): CodeIgniter\Database\BaseResult->getResult(null)
+ 2 SYSTEMPATH\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+ 3 APPPATH\Controllers\Shield\AuthPermissionGroupController.php(26): CodeIgniter\BaseModel->findAll()
+ 4 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Shield\AuthPermissionGroupController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\AuthPermissionGroupController))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-19 13:58:09 --> Call to a member function findAll() on null
+in APPPATH\Controllers\Shield\AuthPermissionGroupController.php on line 26.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Shield\AuthPermissionGroupController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\AuthPermissionGroupController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-19 13:59:03 --> Argument 1 passed to CodeIgniter\Database\BaseResult::getResult() must be of the type string, null given, called in D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Model.php on line 224
+in SYSTEMPATH\Database\BaseResult.php on line 96.
+ 1 SYSTEMPATH\Model.php(224): CodeIgniter\Database\BaseResult->getResult(null)
+ 2 SYSTEMPATH\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+ 3 APPPATH\Controllers\Shield\AuthPermissionGroupController.php(26): CodeIgniter\BaseModel->findAll()
+ 4 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Shield\AuthPermissionGroupController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\AuthPermissionGroupController))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-09-19 14:11:47 --> mysqli_sql_exception: Unknown column 'group_nama' in 'field list' in D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `auth_pe...', 0)
+#1 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `auth_pe...')
+#2 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `auth_pe...')
+#3 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `auth_pe...', Array, false)
+#4 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Model.php(223): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\Developer\codeigniter4-erp-clg\app\Controllers\Shield\AuthPermissionGroupController.php(29): CodeIgniter\BaseModel->findAll()
+#7 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(907): App\Controllers\Shield\AuthPermissionGroupController->index()
+#8 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\AuthPermissionGroupController))
+#9 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Developer\codeigniter4-erp-clg\public\index.php(73): CodeIgniter\CodeIgniter->run()
+#11 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\Developer\\co...')
+#12 {main}
+CRITICAL - 2022-09-19 14:11:47 --> Unknown column 'group_nama' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `auth_permission_groups`.`id`, `group_nama`, `permission_name`
+FROM `auth_permission_groups`
+JOIN `auth_groups` ON `auth_groups`.`id`=`auth_permission_groups`.`group_id`
+JOIN `auth_permission` ON `auth_permission`.`id`=`auth_permission_groups`.`permission`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `auth_permission_groups`.`id`, `group_nama`, `permission_name`
+FROM `auth_permission_groups`
+JOIN `auth_groups` ON `auth_groups`.`id`=`auth_permission_groups`.`group_id`
+JOIN `auth_permission` ON `auth_permission`.`id`=`auth_permission_groups`.`permission`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `auth_permission_groups`.`id`, `group_nama`, `permission_name`
+FROM `auth_permission_groups`
+JOIN `auth_groups` ON `auth_groups`.`id`=`auth_permission_groups`.`group_id`
+JOIN `auth_permission` ON `auth_permission`.`id`=`auth_permission_groups`.`permission`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `auth_permission_groups`.`id`, `group_nama`, `permission_name`
+FROM `auth_permission_groups`
+JOIN `auth_groups` ON `auth_groups`.`id`=`auth_permission_groups`.`group_id`
+JOIN `auth_permission` ON `auth_permission`.`id`=`auth_permission_groups`.`permission`', [], false)
+ 5 SYSTEMPATH\Model.php(223): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Shield\AuthPermissionGroupController.php(29): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Shield\AuthPermissionGroupController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\AuthPermissionGroupController))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-09-19 14:13:52 --> mysqli_sql_exception: Column 'description' in field list is ambiguous in D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `auth_pe...', 0)
+#1 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `auth_pe...')
+#2 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `auth_pe...')
+#3 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `auth_pe...', Array, false)
+#4 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Model.php(223): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\Developer\codeigniter4-erp-clg\app\Controllers\Shield\AuthPermissionGroupController.php(29): CodeIgniter\BaseModel->findAll()
+#7 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(907): App\Controllers\Shield\AuthPermissionGroupController->index()
+#8 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\AuthPermissionGroupController))
+#9 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Developer\codeigniter4-erp-clg\public\index.php(73): CodeIgniter\CodeIgniter->run()
+#11 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\Developer\\co...')
+#12 {main}
+CRITICAL - 2022-09-19 14:13:52 --> Column 'description' in field list is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `auth_permission_groups`.`id`, `group_name`, `permission_name`, `authorization`, `description`
+FROM `auth_permission_groups`
+JOIN `auth_groups` ON `auth_groups`.`id`=`auth_permission_groups`.`group_id`
+JOIN `auth_permission` ON `auth_permission`.`id`=`auth_permission_groups`.`permission`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `auth_permission_groups`.`id`, `group_name`, `permission_name`, `authorization`, `description`
+FROM `auth_permission_groups`
+JOIN `auth_groups` ON `auth_groups`.`id`=`auth_permission_groups`.`group_id`
+JOIN `auth_permission` ON `auth_permission`.`id`=`auth_permission_groups`.`permission`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `auth_permission_groups`.`id`, `group_name`, `permission_name`, `authorization`, `description`
+FROM `auth_permission_groups`
+JOIN `auth_groups` ON `auth_groups`.`id`=`auth_permission_groups`.`group_id`
+JOIN `auth_permission` ON `auth_permission`.`id`=`auth_permission_groups`.`permission`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `auth_permission_groups`.`id`, `group_name`, `permission_name`, `authorization`, `description`
+FROM `auth_permission_groups`
+JOIN `auth_groups` ON `auth_groups`.`id`=`auth_permission_groups`.`group_id`
+JOIN `auth_permission` ON `auth_permission`.`id`=`auth_permission_groups`.`permission`', [], false)
+ 5 SYSTEMPATH\Model.php(223): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Shield\AuthPermissionGroupController.php(29): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Shield\AuthPermissionGroupController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\AuthPermissionGroupController))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-09-19 14:20:54 --> mysqli_sql_exception: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'erp.auth_permission_groups.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by in D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `auth_pe...', 0)
+#1 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `auth_pe...')
+#2 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `auth_pe...')
+#3 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `auth_pe...', Array, false)
+#4 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Model.php(223): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\Developer\codeigniter4-erp-clg\app\Controllers\Shield\AuthPermissionGroupController.php(30): CodeIgniter\BaseModel->findAll()
+#7 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(907): App\Controllers\Shield\AuthPermissionGroupController->index()
+#8 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\AuthPermissionGroupController))
+#9 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Developer\codeigniter4-erp-clg\public\index.php(73): CodeIgniter\CodeIgniter->run()
+#11 D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\Developer\\co...')
+#12 {main}
+CRITICAL - 2022-09-19 14:20:54 --> Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'erp.auth_permission_groups.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `auth_permission_groups`.`id`, `group_name`, `permission_name`, `authorization`, `auth_permission`.`description`
+FROM `auth_permission_groups`
+JOIN `auth_groups` ON `auth_groups`.`id`=`auth_permission_groups`.`group_id`
+JOIN `auth_permission` ON `auth_permission`.`id`=`auth_permission_groups`.`permission`
+GROUP BY `auth_groups`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `auth_permission_groups`.`id`, `group_name`, `permission_name`, `authorization`, `auth_permission`.`description`
+FROM `auth_permission_groups`
+JOIN `auth_groups` ON `auth_groups`.`id`=`auth_permission_groups`.`group_id`
+JOIN `auth_permission` ON `auth_permission`.`id`=`auth_permission_groups`.`permission`
+GROUP BY `auth_groups`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `auth_permission_groups`.`id`, `group_name`, `permission_name`, `authorization`, `auth_permission`.`description`
+FROM `auth_permission_groups`
+JOIN `auth_groups` ON `auth_groups`.`id`=`auth_permission_groups`.`group_id`
+JOIN `auth_permission` ON `auth_permission`.`id`=`auth_permission_groups`.`permission`
+GROUP BY `auth_groups`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `auth_permission_groups`.`id`, `group_name`, `permission_name`, `authorization`, `auth_permission`.`description`
+FROM `auth_permission_groups`
+JOIN `auth_groups` ON `auth_groups`.`id`=`auth_permission_groups`.`group_id`
+JOIN `auth_permission` ON `auth_permission`.`id`=`auth_permission_groups`.`permission`
+GROUP BY `auth_groups`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(223): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Shield\AuthPermissionGroupController.php(30): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Shield\AuthPermissionGroupController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\AuthPermissionGroupController))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-19 14:43:46 --> Undefined index: admin
+in APPPATH\Helpers\general_helper.php on line 184.
+ 1 APPPATH\Helpers\general_helper.php(184): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: admin', 'APPPATH\\Helpers\\general_helper.php', 184, [...])
+ 2 APPPATH\Controllers\Shield\AuthPermissionGroupController.php(34): getPermissionGroup()
+ 3 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\Shield\AuthPermissionGroupController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shield\AuthPermissionGroupController))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-19 15:13:36 --> Constant expression contains invalid operations
+in APPPATH\Config\AuthGroups.php on line 80.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

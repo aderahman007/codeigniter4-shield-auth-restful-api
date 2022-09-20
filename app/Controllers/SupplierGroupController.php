@@ -2,9 +2,9 @@
 
 namespace App\Controllers;
 
-use CodeIgniter\RESTful\ResourceController;
+use App\Controllers\BaseApiController;
 
-class SupplierGroupController extends ResourceController
+class SupplierGroupController extends BaseApiController
 {
     protected $format       = 'json';
     protected $modelName    = 'App\Models\SupplierGroupModel';
@@ -134,7 +134,22 @@ class SupplierGroupController extends ResourceController
      */
     public function edit($id = null)
     {
-        //
+        $query = $this->model->find($id);
+
+        if ($query) {
+            $msg = [
+                'status'        => 200,
+                'message'       => 'Edit supplier group',
+                'data'          => ['suppliergroup' => $query],
+            ];
+        } else {
+            $msg = [
+                'status'        => 404,
+                'message'       => 'Data tidak ditemukan',
+                'data'          => [],
+            ];
+        }
+        return $this->respond($msg, $msg['status']);
     }
 
     /**
@@ -163,9 +178,6 @@ class SupplierGroupController extends ResourceController
                 ]
             ];
         } else {
-            // $data = $this->request->getRawInput();
-            // $data['usercreate'] = '';
-            // $data['updated_at'] = date('Y-m-d H:i:s');
             $data = [
                 'description' => $this->request->getVar('description'),
                 'parent' => $this->request->getVar('parent'),
@@ -177,9 +189,9 @@ class SupplierGroupController extends ResourceController
                 'usercreate' => '',
                 'updated_at' => date('Y-m-d H:i:s'),
             ];
-            $updated = $this->model->update(['id' => $id], $data);
+            $this->model->update(['id' => $id], $data);
 
-            if ($updated) {
+            if ($this->model->affectedRows()) {
                 $msg = [
                     'status'        => 200,
                     'message'       => 'Data berhasil di update',

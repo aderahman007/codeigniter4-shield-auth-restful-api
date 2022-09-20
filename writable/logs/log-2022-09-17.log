@@ -1,0 +1,17 @@
+CRITICAL - 2022-09-17 09:25:02 --> Undefined variable: allowedPostFields
+in APPPATH\Controllers\UsersController.php on line 163.
+ 1 APPPATH\Controllers\UsersController.php(163): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: allowedPostFields', 'APPPATH\\Controllers\\UsersController.php', 163, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\UsersController->update('8')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-17 11:24:12 --> The namespace delimiter is a backslash (\), not a slash (/). Route handler: \App\Controllers\Shield/UsersController::index
+in SYSTEMPATH\Router\Router.php on line 466.
+ 1 SYSTEMPATH\Router\Router.php(466): CodeIgniter\Router\Exceptions\RouterException::forInvalidControllerName('\\App\\Controllers\\Shield/UsersController::index')
+ 2 SYSTEMPATH\Router\Router.php(181): CodeIgniter\Router\Router->checkRoutes('api/v1/users')
+ 3 SYSTEMPATH\CodeIgniter.php(782): CodeIgniter\Router\Router->handle('api/v1/users')
+ 4 SYSTEMPATH\CodeIgniter.php(406): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

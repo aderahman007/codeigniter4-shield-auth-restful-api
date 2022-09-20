@@ -3,6 +3,7 @@
 namespace Config;
 
 use App\Filters\Cors;
+use App\Filters\CheckAuthFilter;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
@@ -25,6 +26,11 @@ class Filters extends BaseConfig
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
         'cors'          => Cors::class,
+        'checkauth'     => CheckAuthFilter::class,
+        'session'    => \CodeIgniter\Shield\Filters\SessionAuth::class,
+        'tokens'     => \CodeIgniter\Shield\Filters\TokenAuth::class,
+        'chain'      => \CodeIgniter\Shield\Filters\ChainAuth::class,
+        'auth-rates' => \CodeIgniter\Shield\Filters\AuthRates::class,
     ];
 
     /**

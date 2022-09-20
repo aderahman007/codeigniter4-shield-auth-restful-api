@@ -2,7 +2,6 @@
 
 namespace Config;
 
-use App\Controllers\SupplierController;
 
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
@@ -38,14 +37,32 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'HomeController::index');
-$routes->get('tes', 'HomeController::getTes');
+$routes->get('tes', 'Shield\AuthController::index');
 
 $routes->group('api/v1', function ($routes) {
-    $routes->resource('productgroup', ['controller' => 'ProductGroupController']);
-    $routes->resource('productbrand', ['controller' => 'ProductBrandController']);
-    $routes->resource('supplier', ['controller' => 'SupplierController']);
-    $routes->resource('suppliergroup', ['controller' => 'SupplierGroupController']);
+    $routes->post('login', 'Shield\AuthController::login');
+    $routes->get('logout', 'Shield\AuthController::logout', ['filter' => 'checkauth']);
+    $routes->get('logged-out', 'Shield\AuthController::loggedOut');
+
+    $routes->get('getusersgroup/(:any)', 'Shield\UsersController::getUsersGroup/$1', ['filter' => 'checkauth']);
+    $routes->post('addgroup', 'Shield\UsersController::addGroup', ['filter' => 'checkauth']);
+    $routes->post('removegroup', 'Shield\UsersController::removeGroup', ['filter' => 'checkauth']);
+
+    $routes->get('getuserspermission/(:any)', 'Shield\UsersController::getUsersPermission/$1', ['filter' => 'checkauth']);
+    $routes->post('addpermission', 'Shield\UsersController::addPermission', ['filter' => 'checkauth']);
+    $routes->post('removepermission', 'Shield\UsersController::removePermission', ['filter' => 'checkauth']);
+
+    $routes->resource('users', ['controller' => 'Shield\UsersController', 'filter' => 'checkauth']);
+    $routes->resource('usersgroups', ['controller' => 'Shield\AuthGroupController', 'filter' => 'checkauth']);
+    $routes->resource('authpermission', ['controller' => 'Shield\AuthPermissionController', 'filter' => 'checkauth']);
+    $routes->resource('authpermissiongroup', ['controller' => 'Shield\AuthPermissionGroupController', 'filter' => 'checkauth']);
+    $routes->resource('productgroup', ['controller' => 'ProductGroupController', 'filter' => 'checkauth']);
+    $routes->resource('productbrand', ['controller' => 'ProductBrandController', 'filter' => 'checkauth']);
+    $routes->resource('supplier', ['controller' => 'SupplierController', 'filter' => 'checkauth']);
+    $routes->resource('suppliergroup', ['controller' => 'SupplierGroupController', 'filter' => 'checkauth']);
 });
+
+service('auth')->routes($routes);
 /*
  * --------------------------------------------------------------------
  * Additional Routing

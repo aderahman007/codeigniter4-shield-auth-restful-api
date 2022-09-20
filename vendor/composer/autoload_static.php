@@ -43,6 +43,8 @@ class ComposerStaticInitece1eeb10245fe4d5366978c6f5c835f
         ),
         'C' => 
         array (
+            'CodeIgniter\\Shield\\' => 19,
+            'CodeIgniter\\Settings\\' => 21,
             'CodeIgniter\\' => 12,
         ),
     );
@@ -83,6 +85,14 @@ class ComposerStaticInitece1eeb10245fe4d5366978c6f5c835f
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
+        ),
+        'CodeIgniter\\Shield\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/codeigniter4/shield/src',
+        ),
+        'CodeIgniter\\Settings\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/codeigniter4/settings/src',
         ),
         'CodeIgniter\\' => 
         array (
