@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
-use App\Models\SupplierModel;
 
 class SupplierController extends ResourceController
 {

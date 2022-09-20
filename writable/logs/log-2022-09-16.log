@@ -1,0 +1,54 @@
+CRITICAL - 2022-09-16 11:30:41 --> Call to a member function fill() on null
+in APPPATH\Controllers\UsersController.php on line 105.
+ 1 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\UsersController->create()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-16 14:27:53 --> Call to undefined function CodeIgniter\Shield\Controllers\auth()
+in VENDORPATH\codeigniter4\shield\src\Controllers\ActionController.php on line 31.
+ 1 SYSTEMPATH\CodeIgniter.php(906): CodeIgniter\Shield\Controllers\ActionController->_remap('show')
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(CodeIgniter\Shield\Controllers\ActionController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-16 14:34:52 --> Argument 1 passed to CodeIgniter\Shield\Entities\User::setEmail() must be of the type string, null given, called in D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Entity\Entity.php on line 451
+in VENDORPATH\codeigniter4\shield\src\Entities\User.php on line 206.
+ 1 SYSTEMPATH\Entity\Entity.php(451): CodeIgniter\Shield\Entities\User->setEmail(null)
+ 2 SYSTEMPATH\Entity\Entity.php(138): CodeIgniter\Entity\Entity->__set('email', null)
+ 3 APPPATH\Controllers\UsersController.php(111): CodeIgniter\Entity\Entity->fill([...])
+ 4 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\UsersController->create()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-16 14:37:34 --> Argument 1 passed to CodeIgniter\Shield\Entities\User::setEmail() must be of the type string, null given, called in D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Entity\Entity.php on line 451
+in VENDORPATH\codeigniter4\shield\src\Entities\User.php on line 206.
+ 1 SYSTEMPATH\Entity\Entity.php(451): CodeIgniter\Shield\Entities\User->setEmail(null)
+ 2 SYSTEMPATH\Entity\Entity.php(138): CodeIgniter\Entity\Entity->__set('email', null)
+ 3 APPPATH\Controllers\UsersController.php(111): CodeIgniter\Entity\Entity->fill([...])
+ 4 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\UsersController->create()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-16 15:51:04 --> Argument 1 passed to CodeIgniter\Shield\Entities\User::setEmail() must be of the type string, null given, called in D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Entity\Entity.php on line 451
+in VENDORPATH\codeigniter4\shield\src\Entities\User.php on line 206.
+ 1 SYSTEMPATH\Entity\Entity.php(451): CodeIgniter\Shield\Entities\User->setEmail(null)
+ 2 SYSTEMPATH\Entity\Entity.php(138): CodeIgniter\Entity\Entity->__set('email', null)
+ 3 APPPATH\Controllers\UsersController.php(111): CodeIgniter\Entity\Entity->fill([...])
+ 4 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\UsersController->create()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-16 15:59:52 --> Argument 1 passed to CodeIgniter\Shield\Entities\User::setEmail() must be of the type string, null given, called in D:\Developer\codeigniter4-erp-clg\vendor\codeigniter4\framework\system\Entity\Entity.php on line 451
+in VENDORPATH\codeigniter4\shield\src\Entities\User.php on line 206.
+ 1 SYSTEMPATH\Entity\Entity.php(451): CodeIgniter\Shield\Entities\User->setEmail(null)
+ 2 SYSTEMPATH\Entity\Entity.php(138): CodeIgniter\Entity\Entity->__set('email', null)
+ 3 APPPATH\Controllers\UsersController.php(113): CodeIgniter\Entity\Entity->fill([...])
+ 4 SYSTEMPATH\CodeIgniter.php(907): App\Controllers\UsersController->create()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
