@@ -4,9 +4,10 @@ namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
 
-class ProductController extends ResourceController
+class PurchaseController extends ResourceController
 {
-    protected $modelName = 'App\Models\ProductModel';
+
+    protected $modelName = 'App\Models\PurchaseModel';
     protected $format    = 'json';
     protected $validation;
 
@@ -15,6 +16,7 @@ class ProductController extends ResourceController
     {
         $this->validation = \Config\Services::validation();
     }
+
     /**
      * Return an array of resource objects, themselves in array format
      *
@@ -22,11 +24,11 @@ class ProductController extends ResourceController
      */
     public function index()
     {
-        $product = $this->model->findAll();
+        $purchase = $this->model->findAll();
         $data = [
             'status' => 200,
             'message' => '',
-            'data' => ['product' => $product],
+            'data' => ['purchase' => $purchase],
         ];
 
         return $this->respond($data, 200);
@@ -39,12 +41,12 @@ class ProductController extends ResourceController
      */
     public function show($id = null)
     {
-        $product = $this->model->find($id);
-        if ($product) {
+        $purchase = $this->model->find($id);
+        if ($purchase) {
             $data = [
                 'status' => 200,
-                'message' => 'Data product by id',
-                'data' => ['product' => $product],
+                'message' => 'Data purchase by id',
+                'data' => ['purchase' => $purchase],
             ];
         } else {
             $data = [
@@ -75,16 +77,34 @@ class ProductController extends ResourceController
     public function create()
     {
         $validasi = $this->validate([
-            'name' => [
+            'division' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => 'Nama Product Harus di isi'
+                    'required' => 'Division Harus di isi'
+                ],
+            ],
+            'purchaser' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Purchaser Harus di isi'
+                ],
+            ],
+            'supplierid' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'ID Suplier Harus di isi'
+                ],
+            ],
+            'shipment' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Shipment Harus di isi'
                 ],
             ],
         ]);
         if ($validasi) {
             $data =  (array) $this->request->getVar();
-            $data['id'] = get_kode('product', 'id', 'PR');
+            $data['id'] = get_kode('purchase', 'id', 'PCH');
             // return $this->respond($data, 200);
             // print_r($data);
             // die;
@@ -92,14 +112,14 @@ class ProductController extends ResourceController
             if ($this->model->save($data)) {
                 $msg = [
                     'status' => 200,
-                    'message' => 'Product berhasil ditambah',
+                    'message' => 'Purchasing berhasil ditambah',
                     'data' => $data,
                 ];
                 return $this->respond($msg, 200);
             } else {
                 $msg = [
                     'status' => 500,
-                    'message' => 'Product gagal ditambah',
+                    'message' => 'Purchasing gagal ditambah',
                     'data' => [],
                 ];
                 return $this->respond($msg, 500);
@@ -109,7 +129,11 @@ class ProductController extends ResourceController
                 'status' => 500,
                 'message' => 'Validasi error',
                 'data' => [
-                    'name' => $this->validation->getError('name'),
+                    'division' => $this->validation->getError('division'),
+                    'purchaser' => $this->validation->getError('purchaser'),
+                    'supplierid' => $this->validation->getError('supplierid'),
+                    'shipment' => $this->validation->getError('shipment'),
+
                 ],
             ];
             return $this->respond($msg, 500);
@@ -132,41 +156,21 @@ class ProductController extends ResourceController
      */
     public function update($id = null)
     {
-        $validasi = $this->validate([
-            'name' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Nama Produk Harus di isi'
-                ],
-            ],
-        ]);
-        if ($validasi) {
-            $data = (array) $this->request->getVar();
-            $data['id'] = $id;
+        $data = (array) $this->request->getVar();
+        $data['id'] = $id;
 
-            if ($this->model->update(['id' => $id], $data)) {
-                $msg = [
-                    'status' => 200,
-                    'message' => 'Produk berhasil diubah',
-                    'data' => $data,
-                ];
-                return $this->respond($msg, 200);
-            } else {
-                $msg = [
-                    'status' => 500,
-                    'message' => 'Produk gagal diubah',
-                    'data' => [],
-                ];
-                return $this->respond($msg, 500);
-            }
+        if ($this->model->update(['id' => $id], $data)) {
+            $msg = [
+                'status' => 200,
+                'message' => 'Purchase berhasil diubah',
+                'data' => $data,
+            ];
+            return $this->respond($msg, 200);
         } else {
             $msg = [
                 'status' => 500,
-                'message' => 'Validasi error',
-                'data' => [
-                    'name' => $this->validation->getError('name'),
-
-                ],
+                'message' => 'Purchase gagal diubah',
+                'data' => [],
             ];
             return $this->respond($msg, 500);
         }
@@ -183,14 +187,14 @@ class ProductController extends ResourceController
         if ($this->model->db->affectedRows() === 0) {
             $msg = [
                 'status' => 404,
-                'message' => 'Produk dengan id ' . $id . ' tidak ditemukan atau sudah dihapus',
+                'message' => 'Supplier dengan id ' . $id . ' tidak ditemukan atau sudah dihapus',
                 'data' => [],
             ];
             return $this->respond($msg, 404);
         }
         $msg = [
             'status' => 200,
-            'message' => 'Produk berhasil dihapus',
+            'message' => 'Supplier berhasil dihapus',
             'data' => [],
         ];
         return $this->respond($msg, 200);

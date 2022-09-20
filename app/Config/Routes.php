@@ -40,6 +40,7 @@ $routes->get('/', 'HomeController::index');
 $routes->get('tes', 'Shield\AuthController::index');
 
 $routes->group('api/v1', function ($routes) {
+
     $routes->post('login', 'Shield\AuthController::login');
     $routes->get('logout', 'Shield\AuthController::logout', ['filter' => 'checkauth']);
     $routes->get('logged-out', 'Shield\AuthController::loggedOut');
@@ -60,6 +61,16 @@ $routes->group('api/v1', function ($routes) {
     $routes->resource('productbrand', ['controller' => 'ProductBrandController', 'filter' => 'checkauth']);
     $routes->resource('supplier', ['controller' => 'SupplierController', 'filter' => 'checkauth']);
     $routes->resource('suppliergroup', ['controller' => 'SupplierGroupController', 'filter' => 'checkauth']);
+
+    $routes->resource('purchasedetail', ['controller' => 'PurchaseDetailController']);
+    $routes->resource('purchase', ['controller' => 'PurchaseController']);
+    $routes->resource('product', ['controller' => 'ProductController']);
+    $routes->resource('unit', ['controller' => 'UnitController']);
+    $routes->resource('productgroup', ['controller' => 'ProductGroupController']);
+    $routes->resource('productbrand', ['controller' => 'ProductBrandController']);
+    $routes->resource('supplier', ['controller' => 'SupplierController']);
+    $routes->resource('suppliergroup', ['controller' => 'SupplierGroupController']);
+
 });
 
 service('auth')->routes($routes);

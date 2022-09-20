@@ -4,9 +4,9 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ProductModel extends Model
+class PurchaseDetailModel extends Model
 {
-    protected $table            = 'product';
+    protected $table            = 'purchasedetail';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = false;
     protected $insertID         = 0;
