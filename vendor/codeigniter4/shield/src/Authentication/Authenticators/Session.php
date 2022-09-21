@@ -323,6 +323,13 @@ class Session implements AuthenticatorInterface
             ]);
         }
 
+        if ($user->active === false) {
+            return new Result([
+                'success' => false,
+                'reason'  => lang('Auth.userInActive'),
+            ]);
+        }
+
         /** @var Passwords $passwords */
         $passwords = service('passwords');
 

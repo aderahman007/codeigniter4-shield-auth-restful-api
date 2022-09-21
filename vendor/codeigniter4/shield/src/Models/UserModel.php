@@ -216,6 +216,7 @@ class UserModel extends Model
         $this->save($user);
     
     }
+    
     /**
      * inActivate a User.
      */

@@ -125,8 +125,13 @@ class UsersController extends BaseApiController
             /** @var Session $authenticator */
             $authenticator = auth('session')->getAuthenticator();
 
+
             // Set the user active
-            $authenticator->activateUser($user);
+            if ($this->request->getVar('active') == 0){
+                $authenticator->activateUser($user);
+            }else{
+                $authenticator->inActivateUser($user);
+            }
 
             $msg = [
                 'status'        => 200,
@@ -227,6 +232,17 @@ class UsersController extends BaseApiController
 
             try {
                 $this->usersModel->save($user);
+                
+                /** @var Session $authenticator */
+                $authenticator = auth('session')->getAuthenticator();
+
+
+                // Set the user active
+                if ($this->request->getVar('active') == 0){
+                    $authenticator->activateUser($user);
+                }else{
+                    $authenticator->inActivateUser($user);
+                }
             } catch (\Throwable $e) {
                 $msg = [
                     'status'        => 500,
